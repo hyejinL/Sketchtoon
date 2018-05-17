@@ -1,24 +1,583 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="beJ-i8-nHe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Setting View Controller-->
+        <scene sceneID="VAJ-vf-L1L">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="SettingViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="0D0-cn-nXK" customClass="SettingViewController" customModule="Naver_webtoon_maker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m5h-eO-sJ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUH-iL-58K">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Frp-mC-j48">
+                                <rect key="frame" x="87" y="161" width="200" height="344"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foL-Vm-oqp">
+                                        <rect key="frame" x="136" y="10" width="54" height="30"/>
+                                        <state key="normal" title="Dismiss">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pressedDismissButton:" destination="0D0-cn-nXK" eventType="touchUpInside" id="pQr-CP-CW3"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFl-6F-2pd">
+                                        <rect key="frame" x="0.0" y="45" width="200" height="299"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="299" id="anc-l2-O5a"/>
+                                            <constraint firstAttribute="width" constant="200" id="j6h-mI-NnI"/>
+                                        </constraints>
+                                        <viewLayoutGuide key="safeArea" id="cea-J6-4ds"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4g1-79-8oF" firstAttribute="trailing" secondItem="foL-Vm-oqp" secondAttribute="trailing" constant="10" id="6bo-fo-p3T"/>
+                                    <constraint firstAttribute="bottom" secondItem="kFl-6F-2pd" secondAttribute="bottom" id="7h3-Fo-0uX"/>
+                                    <constraint firstItem="foL-Vm-oqp" firstAttribute="top" secondItem="4g1-79-8oF" secondAttribute="top" constant="10" id="G08-ZX-zbR"/>
+                                    <constraint firstItem="kFl-6F-2pd" firstAttribute="leading" secondItem="Frp-mC-j48" secondAttribute="leading" id="N8s-bE-IWd"/>
+                                    <constraint firstAttribute="width" constant="200" id="QQ4-v8-JrW"/>
+                                    <constraint firstItem="kFl-6F-2pd" firstAttribute="top" secondItem="foL-Vm-oqp" secondAttribute="bottom" constant="5" id="bRo-Kj-gP8"/>
+                                    <constraint firstAttribute="trailing" secondItem="kFl-6F-2pd" secondAttribute="trailing" id="kZl-Gr-HLB"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="4g1-79-8oF"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="BUH-iL-58K" firstAttribute="top" secondItem="m5h-eO-sJ9" secondAttribute="top" id="Byp-OL-7hY"/>
+                            <constraint firstItem="BUH-iL-58K" firstAttribute="bottom" secondItem="4uX-Ok-BrV" secondAttribute="bottom" id="bLU-TM-DcQ"/>
+                            <constraint firstItem="BUH-iL-58K" firstAttribute="trailing" secondItem="4uX-Ok-BrV" secondAttribute="trailing" id="gA2-OA-ZSv"/>
+                            <constraint firstItem="Frp-mC-j48" firstAttribute="centerX" secondItem="BUH-iL-58K" secondAttribute="centerX" id="jcw-ma-Sv7"/>
+                            <constraint firstItem="Frp-mC-j48" firstAttribute="centerY" secondItem="BUH-iL-58K" secondAttribute="centerY" id="sIc-Bp-SpK"/>
+                            <constraint firstItem="BUH-iL-58K" firstAttribute="leading" secondItem="4uX-Ok-BrV" secondAttribute="leading" id="soI-gp-SV0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4uX-Ok-BrV"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundSettingView" destination="zEP-Gx-x6f" id="YLm-Pv-AcB"/>
+                        <outlet property="brushSettingView" destination="Xd9-l8-zgd" id="ZQr-jL-2W4"/>
+                        <outlet property="dismissActionView" destination="BUH-iL-58K" id="iFM-Ai-xrK"/>
+                        <outlet property="eraserSettingView" destination="Uyx-Hv-yBx" id="G7a-Rh-0qO"/>
+                        <outlet property="settingView" destination="Frp-mC-j48" id="8zL-wK-JhZ"/>
+                        <outlet property="viewHeight" destination="anc-l2-O5a" id="yqy-xl-IKG"/>
+                        <outlet property="viewInSettingView" destination="kFl-6F-2pd" id="Rdm-OI-oNz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vx3-AV-VkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="zEP-Gx-x6f" customClass="ChromaColorPicker" customModule="ChromaColorPicker">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <viewLayoutGuide key="safeArea" id="SeW-h9-Mzp"/>
+                </view>
+                <view contentMode="scaleToFill" id="Uyx-Hv-yBx" customClass="EraserSettingView" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="120"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지우개 크기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLG-fv-9IQ">
+                            <rect key="frame" x="10" y="50" width="47" height="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="Bkf-ty-zNW">
+                            <rect key="frame" x="8" y="67" width="184" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="180" id="KhR-Q1-PSQ"/>
+                            </constraints>
+                            <color key="minimumTrackTintColor" red="0.98823529409999999" green="0.86274509799999999" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </slider>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXg-9o-Cws" customClass="CircleView" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                            <rect key="frame" x="95" y="25" width="10" height="10"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="CXg-9o-Cws" secondAttribute="height" multiplier="1:1" id="75g-UP-zbw"/>
+                                <constraint firstAttribute="width" constant="10" id="pQr-Ws-kh7"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="K7T-LF-4HU" firstAttribute="trailing" secondItem="Bkf-ty-zNW" secondAttribute="trailing" constant="10" id="2U4-hc-Xhk"/>
+                        <constraint firstItem="Bkf-ty-zNW" firstAttribute="leading" secondItem="K7T-LF-4HU" secondAttribute="leading" constant="10" id="DM1-U4-Ufb"/>
+                        <constraint firstItem="CXg-9o-Cws" firstAttribute="centerY" secondItem="K7T-LF-4HU" secondAttribute="centerY" constant="-30" id="G1J-N9-AIh"/>
+                        <constraint firstItem="K7T-LF-4HU" firstAttribute="bottom" secondItem="Bkf-ty-zNW" secondAttribute="bottom" constant="10" id="Hhl-8K-4Pl"/>
+                        <constraint firstItem="Bkf-ty-zNW" firstAttribute="top" secondItem="TLG-fv-9IQ" secondAttribute="bottom" constant="5" id="Sfo-4i-pR5"/>
+                        <constraint firstItem="TLG-fv-9IQ" firstAttribute="top" secondItem="K7T-LF-4HU" secondAttribute="top" constant="50" id="XWL-sQ-V0i"/>
+                        <constraint firstItem="TLG-fv-9IQ" firstAttribute="leading" secondItem="K7T-LF-4HU" secondAttribute="leading" constant="10" id="lRb-D7-eGX"/>
+                        <constraint firstItem="CXg-9o-Cws" firstAttribute="centerX" secondItem="K7T-LF-4HU" secondAttribute="centerX" id="uFM-1a-a9D"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="K7T-LF-4HU"/>
+                    <connections>
+                        <outlet property="eraserScaleSlider" destination="Bkf-ty-zNW" id="lu4-ez-LJN"/>
+                        <outlet property="eraserView" destination="CXg-9o-Cws" id="3c7-tL-VuB"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" id="Xd9-l8-zgd" customClass="BrushSettingView" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="345"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="biv-25-dTw">
+                            <rect key="frame" x="18" y="310" width="164" height="31"/>
+                            <color key="minimumTrackTintColor" white="0.0" alpha="0.69584760270000001" colorSpace="calibratedWhite"/>
+                        </slider>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="펜 크기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qty-Eo-Zs7">
+                            <rect key="frame" x="10" y="46" width="29" height="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="zk0-eN-EpJ">
+                            <rect key="frame" x="18" y="63" width="164" height="31"/>
+                            <color key="minimumTrackTintColor" red="0.98823529409999999" green="0.86274509799999999" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="changedBrushScale:" destination="Xd9-l8-zgd" eventType="valueChanged" id="o4k-ff-j2G"/>
+                            </connections>
+                        </slider>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불투명도" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooh-HZ-Zyp">
+                            <rect key="frame" x="10" y="293" width="35" height="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJf-59-Avp" customClass="ChromaColorPicker" customModule="ChromaColorPicker">
+                            <rect key="frame" x="0.0" y="93" width="200" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="TJf-59-Avp" secondAttribute="height" multiplier="1:1" id="LD1-PO-wZn"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3C-z2-kAL" customClass="CircleView" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                            <rect key="frame" x="95" y="10" width="10" height="10"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="j3C-z2-kAL" secondAttribute="height" multiplier="1:1" id="CB3-p5-yP2"/>
+                                <constraint firstAttribute="width" constant="10" id="vxp-6s-VE8"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="j3C-z2-kAL" firstAttribute="centerX" secondItem="PuL-fE-L2p" secondAttribute="centerX" id="3AC-DG-pti"/>
+                        <constraint firstItem="TJf-59-Avp" firstAttribute="width" secondItem="Xd9-l8-zgd" secondAttribute="width" id="7ja-76-sra"/>
+                        <constraint firstItem="zk0-eN-EpJ" firstAttribute="leading" secondItem="PuL-fE-L2p" secondAttribute="leading" constant="20" id="OLU-d8-ULx"/>
+                        <constraint firstAttribute="trailing" secondItem="biv-25-dTw" secondAttribute="trailing" constant="20" id="St5-rW-z56"/>
+                        <constraint firstItem="biv-25-dTw" firstAttribute="leading" secondItem="Xd9-l8-zgd" secondAttribute="leading" constant="20" id="TcV-tD-cNs"/>
+                        <constraint firstAttribute="bottom" secondItem="biv-25-dTw" secondAttribute="bottom" constant="5" id="WEu-N9-xYw"/>
+                        <constraint firstItem="zk0-eN-EpJ" firstAttribute="top" secondItem="qty-Eo-Zs7" secondAttribute="bottom" constant="5" id="WaQ-yK-eBk"/>
+                        <constraint firstAttribute="trailing" secondItem="zk0-eN-EpJ" secondAttribute="trailing" constant="20" id="XHf-ig-1jg"/>
+                        <constraint firstItem="biv-25-dTw" firstAttribute="top" secondItem="ooh-HZ-Zyp" secondAttribute="bottom" constant="5" id="XWd-Rq-Vx9"/>
+                        <constraint firstItem="qty-Eo-Zs7" firstAttribute="top" secondItem="PuL-fE-L2p" secondAttribute="top" constant="46" id="aFR-BC-qQS"/>
+                        <constraint firstItem="TJf-59-Avp" firstAttribute="top" secondItem="zk0-eN-EpJ" secondAttribute="bottom" id="hON-Qb-h5d"/>
+                        <constraint firstItem="ooh-HZ-Zyp" firstAttribute="top" secondItem="TJf-59-Avp" secondAttribute="bottom" id="i55-eG-bms"/>
+                        <constraint firstItem="j3C-z2-kAL" firstAttribute="top" secondItem="PuL-fE-L2p" secondAttribute="top" constant="10" id="iFI-rA-RmT"/>
+                        <constraint firstItem="TJf-59-Avp" firstAttribute="leading" secondItem="Xd9-l8-zgd" secondAttribute="leading" id="nA8-12-gcQ"/>
+                        <constraint firstItem="ooh-HZ-Zyp" firstAttribute="leading" secondItem="Xd9-l8-zgd" secondAttribute="leading" constant="10" id="s8N-DS-JzG"/>
+                        <constraint firstAttribute="trailing" secondItem="TJf-59-Avp" secondAttribute="trailing" id="sQf-3g-e6B"/>
+                        <constraint firstItem="qty-Eo-Zs7" firstAttribute="leading" secondItem="PuL-fE-L2p" secondAttribute="leading" constant="10" id="ysk-3Y-62r"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="PuL-fE-L2p"/>
+                    <connections>
+                        <outlet property="brushAlphaSlider" destination="biv-25-dTw" id="RbM-1x-zM4"/>
+                        <outlet property="brushScaleSlider" destination="zk0-eN-EpJ" id="jcY-nz-WCX"/>
+                        <outlet property="brushView" destination="j3C-z2-kAL" id="d5F-Rn-qcv"/>
+                        <outlet property="brushViewWidth" destination="vxp-6s-VE8" id="vpc-bq-jJ7"/>
+                        <outlet property="colorPicker" destination="TJf-59-Avp" id="gq3-FE-Nx4"/>
+                    </connections>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="1085.5999999999999" y="30.134932533733135"/>
+        </scene>
+        <!--Sketch View Controller-->
+        <scene sceneID="HRo-jV-7YO">
+            <objects>
+                <viewController id="beJ-i8-nHe" customClass="SketchViewController" customModule="Naver_webtoon_maker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cc0-64-oLR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xo8-Qp-D0c" customClass="SketchView" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                                <rect key="frame" x="12" y="32" width="351" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mEB-k2-tE5" customClass="SettingButtonView" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                                <rect key="frame" x="82.5" y="530" width="210" height="210"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l5j-IQ-Asd" customClass="SettingButtonView" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                                        <rect key="frame" x="80" y="85" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.75" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="JAW-M9-IZK"/>
+                                            <constraint firstAttribute="width" secondItem="l5j-IQ-Asd" secondAttribute="height" multiplier="1:1" id="cJh-86-4TK"/>
+                                            <constraint firstAttribute="height" constant="50" id="f9B-xM-xPj"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbK-If-8oR">
+                                        <rect key="frame" x="87" y="92" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="08h-iE-z6Q"/>
+                                            <constraint firstAttribute="height" constant="35" id="D7S-50-z1E"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <state key="normal" image="paint-palette"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="width">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pressedSettingButton:" destination="beJ-i8-nHe" eventType="touchUpInside" id="oTP-mg-NlS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGX-9l-RtG" customClass="CircleButton" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                                        <rect key="frame" x="35" y="40" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="gMg-nz-ERJ"/>
+                                            <constraint firstAttribute="height" constant="40" id="xEN-Nx-qbN"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="eraser"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="width">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="chooseSettingButton:" destination="beJ-i8-nHe" eventType="touchUpInside" id="zSN-Bt-vh1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poO-Ox-aoj" customClass="CircleButton" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                                        <rect key="frame" x="135" y="40" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="b2C-a9-l3A"/>
+                                            <constraint firstAttribute="width" constant="40" id="eHh-Mj-HkQ"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="text"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="width">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhD-TP-N86" customClass="CircleButton" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="85" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="IoE-AQ-3Ct"/>
+                                            <constraint firstAttribute="height" constant="40" id="SDD-cH-8vu"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="paint-brushes"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="width">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="chooseSettingButton:" destination="beJ-i8-nHe" eventType="touchUpInside" id="znX-wi-P4Q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMi-ka-CMa" customClass="CircleButton" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                                        <rect key="frame" x="155" y="85" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="OGT-fZ-fX4"/>
+                                            <constraint firstAttribute="width" constant="40" id="fjZ-rZ-o6G"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="photo-camera-white"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="width">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="choosePhoto:" destination="beJ-i8-nHe" eventType="touchUpInside" id="TuE-81-qV8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QM-aD-Ywt" customClass="CircleButton" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                                        <rect key="frame" x="85" y="17" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Uht-w1-7G4"/>
+                                            <constraint firstAttribute="width" constant="40" id="ygl-nS-QF5"/>
+                                        </constraints>
+                                        <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal" image="paint-brush"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="width">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="chooseSettingButton:" destination="beJ-i8-nHe" eventType="touchUpInside" id="QFx-i4-7Pk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="poO-Ox-aoj" firstAttribute="centerY" secondItem="l5j-IQ-Asd" secondAttribute="centerY" constant="-50" id="153-eX-1x3"/>
+                                    <constraint firstAttribute="width" constant="210" id="3bj-l1-Ejn"/>
+                                    <constraint firstItem="hMi-ka-CMa" firstAttribute="centerY" secondItem="l5j-IQ-Asd" secondAttribute="centerY" constant="-5" id="5Cj-Hg-hvI"/>
+                                    <constraint firstAttribute="trailing" secondItem="hMi-ka-CMa" secondAttribute="trailing" constant="15" id="8yh-Cj-CYN"/>
+                                    <constraint firstAttribute="height" constant="210" id="9K6-9V-oqm"/>
+                                    <constraint firstItem="3QM-aD-Ywt" firstAttribute="top" secondItem="mEB-k2-tE5" secondAttribute="top" constant="17" id="9tr-Ex-kBV"/>
+                                    <constraint firstItem="yhD-TP-N86" firstAttribute="leading" secondItem="mEB-k2-tE5" secondAttribute="leading" constant="15" id="Blh-f9-DCH"/>
+                                    <constraint firstItem="BbK-If-8oR" firstAttribute="centerY" secondItem="l5j-IQ-Asd" secondAttribute="centerY" id="GFu-Aa-LuN"/>
+                                    <constraint firstItem="l5j-IQ-Asd" firstAttribute="centerY" secondItem="mEB-k2-tE5" secondAttribute="centerY" constant="5" id="NnX-OY-5rP"/>
+                                    <constraint firstItem="yhD-TP-N86" firstAttribute="centerY" secondItem="l5j-IQ-Asd" secondAttribute="centerY" constant="-5" id="OIc-T0-rkH"/>
+                                    <constraint firstItem="VGX-9l-RtG" firstAttribute="centerY" secondItem="l5j-IQ-Asd" secondAttribute="centerY" constant="-50" id="PbF-Q8-i53"/>
+                                    <constraint firstItem="3QM-aD-Ywt" firstAttribute="centerX" secondItem="l5j-IQ-Asd" secondAttribute="centerX" id="VPI-H4-4od"/>
+                                    <constraint firstItem="l5j-IQ-Asd" firstAttribute="centerX" secondItem="mEB-k2-tE5" secondAttribute="centerX" id="eYJ-yz-rjH"/>
+                                    <constraint firstItem="VGX-9l-RtG" firstAttribute="centerX" secondItem="l5j-IQ-Asd" secondAttribute="centerX" constant="-50" id="krr-Jg-7O4"/>
+                                    <constraint firstItem="BbK-If-8oR" firstAttribute="centerX" secondItem="l5j-IQ-Asd" secondAttribute="centerX" id="mke-tK-Cqa"/>
+                                    <constraint firstItem="poO-Ox-aoj" firstAttribute="centerX" secondItem="l5j-IQ-Asd" secondAttribute="centerX" constant="50" id="oTX-Uw-bBj"/>
+                                </constraints>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PfM-mC-bEg">
+                                <rect key="frame" x="315" y="10" width="50" height="152"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veM-MD-3j7" customClass="SettingButtonView" customModule="Naver_webtoon_maker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.88982687770000002" green="0.91461394070000002" blue="0.89808390260000004" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="RzZ-eM-uYe"/>
+                                            <constraint firstAttribute="width" constant="50" id="bQ5-Yx-CUz"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZjZ-7E-EM5">
+                                        <rect key="frame" x="0.0" y="7" width="50" height="135"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gge-Zz-R4n">
+                                                <rect key="frame" x="7.5" y="0.0" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="59U-Zn-PRW"/>
+                                                    <constraint firstAttribute="height" constant="35" id="XYw-6I-ozO"/>
+                                                </constraints>
+                                                <inset key="contentEdgeInsets" minX="3" minY="3" maxX="3" maxY="3"/>
+                                                <state key="normal" image="menu-2"/>
+                                                <connections>
+                                                    <action selector="pressedMenuButton:" destination="beJ-i8-nHe" eventType="touchUpInside" id="eRb-6D-HFE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TL-ij-nba">
+                                                <rect key="frame" x="7.5" y="50" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="6ng-of-dml"/>
+                                                    <constraint firstAttribute="width" constant="35" id="IKv-uw-rXZ"/>
+                                                </constraints>
+                                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" image="folder"/>
+                                                <connections>
+                                                    <action selector="saveButton:" destination="beJ-i8-nHe" eventType="touchUpInside" id="PWs-eM-fey"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xi4-hW-Mc5">
+                                                <rect key="frame" x="7.5" y="100" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="6h5-bp-TqB"/>
+                                                    <constraint firstAttribute="width" constant="35" id="sXQ-SI-9tx"/>
+                                                </constraints>
+                                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" image="layer"/>
+                                                <connections>
+                                                    <action selector="newSheetAction:" destination="beJ-i8-nHe" eventType="touchUpInside" id="5tm-ua-Qfc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ZjZ-7E-EM5" secondAttribute="bottom" constant="10" id="MoJ-1w-hDW"/>
+                                    <constraint firstItem="veM-MD-3j7" firstAttribute="leading" secondItem="PfM-mC-bEg" secondAttribute="leading" id="R8G-vo-C3M"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZjZ-7E-EM5" secondAttribute="trailing" id="RVl-6q-MW1"/>
+                                    <constraint firstAttribute="width" constant="50" id="SNr-V2-u7E"/>
+                                    <constraint firstItem="veM-MD-3j7" firstAttribute="top" secondItem="PfM-mC-bEg" secondAttribute="top" id="T3E-ee-KCm"/>
+                                    <constraint firstAttribute="trailing" secondItem="veM-MD-3j7" secondAttribute="trailing" id="csR-6w-EnG"/>
+                                    <constraint firstItem="ZjZ-7E-EM5" firstAttribute="leading" secondItem="PfM-mC-bEg" secondAttribute="leading" id="fFR-RX-Ljx"/>
+                                    <constraint firstItem="ZjZ-7E-EM5" firstAttribute="top" secondItem="PfM-mC-bEg" secondAttribute="top" constant="7" id="ljU-vH-SeJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.67721178000000004" green="0.67721178000000004" blue="0.67721178000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mEB-k2-tE5" firstAttribute="bottom" secondItem="oLv-CU-xwe" secondAttribute="bottom" constant="73" id="A6M-mi-I89"/>
+                            <constraint firstItem="oLv-CU-xwe" firstAttribute="trailing" secondItem="PfM-mC-bEg" secondAttribute="trailing" constant="10" id="TpQ-eY-Ftt"/>
+                            <constraint firstItem="mEB-k2-tE5" firstAttribute="centerX" secondItem="oLv-CU-xwe" secondAttribute="centerX" id="WB3-jN-EPa"/>
+                            <constraint firstItem="PfM-mC-bEg" firstAttribute="top" secondItem="Cc0-64-oLR" secondAttribute="top" constant="10" id="d5f-v7-ayN"/>
+                            <constraint firstItem="oLv-CU-xwe" firstAttribute="bottom" secondItem="xo8-Qp-D0c" secondAttribute="bottom" constant="12" id="fbo-Nk-K6p"/>
+                            <constraint firstItem="oLv-CU-xwe" firstAttribute="trailing" secondItem="xo8-Qp-D0c" secondAttribute="trailing" constant="12" id="hcf-cU-yfP"/>
+                            <constraint firstItem="xo8-Qp-D0c" firstAttribute="leading" secondItem="oLv-CU-xwe" secondAttribute="leading" constant="12" id="lJJ-YT-cfS"/>
+                            <constraint firstItem="xo8-Qp-D0c" firstAttribute="top" secondItem="oLv-CU-xwe" secondAttribute="top" constant="12" id="oxe-7x-6Vh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oLv-CU-xwe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2MK-uQ-MV6"/>
+                    <connections>
+                        <outlet property="brushButton" destination="3QM-aD-Ywt" id="Q0T-YV-lCE"/>
+                        <outlet property="eraserButton" destination="VGX-9l-RtG" id="aaO-uW-1Ra"/>
+                        <outlet property="menuButton" destination="gge-Zz-R4n" id="d6S-Ec-Bhq"/>
+                        <outlet property="menuView" destination="veM-MD-3j7" id="cQj-za-PEL"/>
+                        <outlet property="newSheetButton" destination="Xi4-hW-Mc5" id="Loo-n1-Oyb"/>
+                        <outlet property="paintButton" destination="yhD-TP-N86" id="4kc-Qt-fn9"/>
+                        <outlet property="paletteButton" destination="BbK-If-8oR" id="tKt-wy-XnF"/>
+                        <outlet property="photoButton" destination="hMi-ka-CMa" id="buX-b6-Wob"/>
+                        <outlet property="saveButton" destination="3TL-ij-nba" id="kri-b1-yWL"/>
+                        <outlet property="settingView" destination="l5j-IQ-Asd" id="TNG-n1-R5C"/>
+                        <outlet property="sketchView" destination="xo8-Qp-D0c" id="Z2Q-2e-Hom"/>
+                        <outlet property="textButton" destination="poO-Ox-aoj" id="fLk-7o-Z7d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GsM-ji-4Xn" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="372" y="31.03448275862069"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9Gs-bg-WOX">
+            <objects>
+                <viewController id="SR9-7z-e7o" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Mk-bP-bSW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="by0-kq-LIZ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FGn-f2-yhC">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KUY-V2-rYc">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="by0-kq-LIZ" firstAttribute="leading" secondItem="e9T-er-60M" secondAttribute="leading" id="1cY-F3-94g"/>
+                            <constraint firstItem="by0-kq-LIZ" firstAttribute="top" secondItem="e9T-er-60M" secondAttribute="top" id="6vq-h9-IIJ"/>
+                            <constraint firstAttribute="trailing" secondItem="by0-kq-LIZ" secondAttribute="trailing" id="bEb-n7-aP7"/>
+                            <constraint firstItem="e9T-er-60M" firstAttribute="bottom" secondItem="by0-kq-LIZ" secondAttribute="bottom" id="nxf-cp-Qwb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e9T-er-60M"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3bO-ht-sQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="372" y="732"/>
+        </scene>
+        <!--Templete View Controller-->
+        <scene sceneID="XQm-FU-hxv">
+            <objects>
+                <viewController storyboardIdentifier="TempleteViewController" id="0pS-wf-vRC" customClass="TempleteViewController" customModule="Naver_webtoon_maker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yCe-Eh-dFg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bg5-va-EEk">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffg-pj-FMq">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hTx-aK-9kI">
+                                                <rect key="frame" x="20" y="20" width="335" height="110"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9id-Im-w92">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="110"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="110" id="3bV-vH-KOv"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="hTx-aK-9kI" secondAttribute="trailing" constant="20" id="3X5-VA-yIK"/>
+                                            <constraint firstAttribute="bottom" secondItem="hTx-aK-9kI" secondAttribute="bottom" constant="20" id="nde-1k-sA4"/>
+                                            <constraint firstItem="hTx-aK-9kI" firstAttribute="top" secondItem="ffg-pj-FMq" secondAttribute="top" constant="20" id="pPH-WZ-IUy"/>
+                                            <constraint firstItem="hTx-aK-9kI" firstAttribute="leading" secondItem="ffg-pj-FMq" secondAttribute="leading" constant="20" id="rcC-AS-ElL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ffg-pj-FMq" secondAttribute="bottom" id="FRe-br-bk0"/>
+                                    <constraint firstItem="ffg-pj-FMq" firstAttribute="top" secondItem="bg5-va-EEk" secondAttribute="top" id="FZd-LA-4El"/>
+                                    <constraint firstItem="ffg-pj-FMq" firstAttribute="leading" secondItem="bg5-va-EEk" secondAttribute="leading" id="dDj-R3-Itt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ffg-pj-FMq" secondAttribute="trailing" id="l98-dK-EDb"/>
+                                    <constraint firstItem="ffg-pj-FMq" firstAttribute="width" secondItem="bg5-va-EEk" secondAttribute="width" id="oNm-FR-hD1"/>
+                                    <constraint firstItem="ffg-pj-FMq" firstAttribute="height" secondItem="bg5-va-EEk" secondAttribute="height" priority="1" id="qmw-tP-EMC"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ejc-WY-f9S" firstAttribute="trailing" secondItem="bg5-va-EEk" secondAttribute="trailing" id="CLN-vj-Zr5"/>
+                            <constraint firstItem="ejc-WY-f9S" firstAttribute="bottom" secondItem="bg5-va-EEk" secondAttribute="bottom" id="F3H-bL-TA2"/>
+                            <constraint firstItem="bg5-va-EEk" firstAttribute="leading" secondItem="ejc-WY-f9S" secondAttribute="leading" id="XDU-Pf-uEj"/>
+                            <constraint firstItem="bg5-va-EEk" firstAttribute="top" secondItem="ejc-WY-f9S" secondAttribute="top" id="u3Y-iA-7uI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ejc-WY-f9S"/>
+                    </view>
+                    <connections>
+                        <outlet property="horizontalStackView" destination="9id-Im-w92" id="ShB-hj-3Z1"/>
+                        <outlet property="verticalStackView" destination="hTx-aK-9kI" id="UuW-Kc-bGN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0HR-pC-cIE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1086" y="732"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="eraser" width="64" height="64"/>
+        <image name="folder" width="64" height="64"/>
+        <image name="layer" width="64" height="64"/>
+        <image name="menu-2" width="64" height="64"/>
+        <image name="paint-brush" width="64" height="64"/>
+        <image name="paint-brushes" width="64" height="64"/>
+        <image name="paint-palette" width="64" height="64"/>
+        <image name="photo-camera-white" width="64" height="64"/>
+        <image name="text" width="64" height="64"/>
+    </resources>
 </document>

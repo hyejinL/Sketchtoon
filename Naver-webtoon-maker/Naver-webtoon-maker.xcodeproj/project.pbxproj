@@ -11,6 +11,25 @@
 		0AFBA44320AD66880019FAD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AFBA44120AD66880019FAD8 /* Main.storyboard */; };
 		0AFBA44520AD66880019FAD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AFBA44420AD66880019FAD8 /* Assets.xcassets */; };
 		0AFBA44820AD66880019FAD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AFBA44620AD66880019FAD8 /* LaunchScreen.storyboard */; };
+		0AFBA45A20AD6D6D0019FAD8 /* SketchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA45920AD6D6D0019FAD8 /* SketchView.swift */; };
+		0AFBA45C20AD6DC10019FAD8 /* StrokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA45B20AD6DC10019FAD8 /* StrokeData.swift */; };
+		0AFBA45E20AD6DCA0019FAD8 /* Stroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA45D20AD6DCA0019FAD8 /* Stroke.swift */; };
+		0AFBA46020AD6DD00019FAD8 /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA45F20AD6DD00019FAD8 /* Brush.swift */; };
+		0AFBA46220AD6E9D0019FAD8 /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA46120AD6E9D0019FAD8 /* UIColor+HexString.swift */; };
+		0AFBA46420AD709A0019FAD8 /* SketchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA46320AD709A0019FAD8 /* SketchViewController.swift */; };
+		0AFBA46620AD72D60019FAD8 /* NSObject+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA46520AD72D60019FAD8 /* NSObject+View.swift */; };
+		0AFBA46820AD72E90019FAD8 /* UIViewController+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA46720AD72E90019FAD8 /* UIViewController+Optional.swift */; };
+		0AFBA46A20AD72F60019FAD8 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA46920AD72F60019FAD8 /* UIViewController+Alert.swift */; };
+		0AFBA46E20AD73A50019FAD8 /* RoundedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA46D20AD73A50019FAD8 /* RoundedProtocol.swift */; };
+		0AFBA47020AD73AF0019FAD8 /* SettingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA46F20AD73AF0019FAD8 /* SettingButtonView.swift */; };
+		0AFBA47220AD73B70019FAD8 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA47120AD73B70019FAD8 /* CircleButton.swift */; };
+		0AFBA47420AD73BE0019FAD8 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA47320AD73BE0019FAD8 /* CircleView.swift */; };
+		0AFBA47620AD73EF0019FAD8 /* GestureableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA47520AD73EF0019FAD8 /* GestureableView.swift */; };
+		0AFBA47820AD73F80019FAD8 /* BrushSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA47720AD73F80019FAD8 /* BrushSettingView.swift */; };
+		0AFBA47A20AD74160019FAD8 /* EraserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA47920AD74160019FAD8 /* EraserSettingView.swift */; };
+		0AFBA47C20AD75300019FAD8 /* NibLodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA47B20AD75300019FAD8 /* NibLodable.swift */; };
+		0AFBA47E20AD754F0019FAD8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA47D20AD754F0019FAD8 /* SettingViewController.swift */; };
+		0AFBA48020AD90580019FAD8 /* GestureableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AFBA47F20AD90580019FAD8 /* GestureableView.xib */; };
 		0DB34EA70C552389BD48FE53 /* Pods_Naver_webtoon_maker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B5288A51A0BA3261581F99 /* Pods_Naver_webtoon_maker.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +41,25 @@
 		0AFBA44420AD66880019FAD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AFBA44720AD66880019FAD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AFBA44920AD66880019FAD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AFBA45920AD6D6D0019FAD8 /* SketchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchView.swift; sourceTree = "<group>"; };
+		0AFBA45B20AD6DC10019FAD8 /* StrokeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeData.swift; sourceTree = "<group>"; };
+		0AFBA45D20AD6DCA0019FAD8 /* Stroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stroke.swift; sourceTree = "<group>"; };
+		0AFBA45F20AD6DD00019FAD8 /* Brush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brush.swift; sourceTree = "<group>"; };
+		0AFBA46120AD6E9D0019FAD8 /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
+		0AFBA46320AD709A0019FAD8 /* SketchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SketchViewController.swift; sourceTree = "<group>"; };
+		0AFBA46520AD72D60019FAD8 /* NSObject+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+View.swift"; sourceTree = "<group>"; };
+		0AFBA46720AD72E90019FAD8 /* UIViewController+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Optional.swift"; sourceTree = "<group>"; };
+		0AFBA46920AD72F60019FAD8 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		0AFBA46D20AD73A50019FAD8 /* RoundedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedProtocol.swift; sourceTree = "<group>"; };
+		0AFBA46F20AD73AF0019FAD8 /* SettingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonView.swift; sourceTree = "<group>"; };
+		0AFBA47120AD73B70019FAD8 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		0AFBA47320AD73BE0019FAD8 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		0AFBA47520AD73EF0019FAD8 /* GestureableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureableView.swift; sourceTree = "<group>"; };
+		0AFBA47720AD73F80019FAD8 /* BrushSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushSettingView.swift; sourceTree = "<group>"; };
+		0AFBA47920AD74160019FAD8 /* EraserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EraserSettingView.swift; sourceTree = "<group>"; };
+		0AFBA47B20AD75300019FAD8 /* NibLodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLodable.swift; sourceTree = "<group>"; };
+		0AFBA47D20AD754F0019FAD8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		0AFBA47F20AD90580019FAD8 /* GestureableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GestureableView.xib; sourceTree = "<group>"; };
 		A5B5288A51A0BA3261581F99 /* Pods_Naver_webtoon_maker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Naver_webtoon_maker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEC0BEA50CD58474210B2AB /* Pods-Naver-webtoon-maker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naver-webtoon-maker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Naver-webtoon-maker/Pods-Naver-webtoon-maker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +146,8 @@
 		0AFBA45320AD66B70019FAD8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0AFBA46320AD709A0019FAD8 /* SketchViewController.swift */,
+				0AFBA47D20AD754F0019FAD8 /* SettingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -115,6 +155,10 @@
 		0AFBA45420AD677C0019FAD8 /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				0AFBA46720AD72E90019FAD8 /* UIViewController+Optional.swift */,
+				0AFBA46920AD72F60019FAD8 /* UIViewController+Alert.swift */,
+				0AFBA46520AD72D60019FAD8 /* NSObject+View.swift */,
+				0AFBA46120AD6E9D0019FAD8 /* UIColor+HexString.swift */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -122,6 +166,14 @@
 		0AFBA45520AD677E0019FAD8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				0AFBA46D20AD73A50019FAD8 /* RoundedProtocol.swift */,
+				0AFBA46F20AD73AF0019FAD8 /* SettingButtonView.swift */,
+				0AFBA47120AD73B70019FAD8 /* CircleButton.swift */,
+				0AFBA47320AD73BE0019FAD8 /* CircleView.swift */,
+				0AFBA45920AD6D6D0019FAD8 /* SketchView.swift */,
+				0AFBA47520AD73EF0019FAD8 /* GestureableView.swift */,
+				0AFBA47720AD73F80019FAD8 /* BrushSettingView.swift */,
+				0AFBA47920AD74160019FAD8 /* EraserSettingView.swift */,
 				0AFBA45820AD67920019FAD8 /* xib */,
 			);
 			path = UI;
@@ -130,6 +182,7 @@
 		0AFBA45620AD677F0019FAD8 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				0AFBA47B20AD75300019FAD8 /* NibLodable.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -137,6 +190,9 @@
 		0AFBA45720AD67810019FAD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0AFBA45B20AD6DC10019FAD8 /* StrokeData.swift */,
+				0AFBA45D20AD6DCA0019FAD8 /* Stroke.swift */,
+				0AFBA45F20AD6DD00019FAD8 /* Brush.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +200,7 @@
 		0AFBA45820AD67920019FAD8 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				0AFBA47F20AD90580019FAD8 /* GestureableView.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -229,6 +286,7 @@
 			files = (
 				0AFBA44820AD66880019FAD8 /* LaunchScreen.storyboard in Resources */,
 				0AFBA44520AD66880019FAD8 /* Assets.xcassets in Resources */,
+				0AFBA48020AD90580019FAD8 /* GestureableView.xib in Resources */,
 				0AFBA44320AD66880019FAD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +346,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AFBA46220AD6E9D0019FAD8 /* UIColor+HexString.swift in Sources */,
+				0AFBA47C20AD75300019FAD8 /* NibLodable.swift in Sources */,
+				0AFBA45C20AD6DC10019FAD8 /* StrokeData.swift in Sources */,
+				0AFBA45A20AD6D6D0019FAD8 /* SketchView.swift in Sources */,
+				0AFBA47A20AD74160019FAD8 /* EraserSettingView.swift in Sources */,
+				0AFBA46020AD6DD00019FAD8 /* Brush.swift in Sources */,
+				0AFBA46620AD72D60019FAD8 /* NSObject+View.swift in Sources */,
+				0AFBA47220AD73B70019FAD8 /* CircleButton.swift in Sources */,
+				0AFBA46E20AD73A50019FAD8 /* RoundedProtocol.swift in Sources */,
+				0AFBA46A20AD72F60019FAD8 /* UIViewController+Alert.swift in Sources */,
+				0AFBA46820AD72E90019FAD8 /* UIViewController+Optional.swift in Sources */,
 				0AFBA43E20AD66880019FAD8 /* AppDelegate.swift in Sources */,
+				0AFBA47620AD73EF0019FAD8 /* GestureableView.swift in Sources */,
+				0AFBA46420AD709A0019FAD8 /* SketchViewController.swift in Sources */,
+				0AFBA45E20AD6DCA0019FAD8 /* Stroke.swift in Sources */,
+				0AFBA47420AD73BE0019FAD8 /* CircleView.swift in Sources */,
+				0AFBA47E20AD754F0019FAD8 /* SettingViewController.swift in Sources */,
+				0AFBA47820AD73F80019FAD8 /* BrushSettingView.swift in Sources */,
+				0AFBA47020AD73AF0019FAD8 /* SettingButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +503,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6J9HAPEME;
 				INFOPLIST_FILE = "$(SRCROOT)/Naver-webtoon-maker/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hyejin.Naver-webtoon-maker";
@@ -442,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y6J9HAPEME;
 				INFOPLIST_FILE = "$(SRCROOT)/Naver-webtoon-maker/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hyejin.Naver-webtoon-maker";
