@@ -9,6 +9,10 @@
 import UIKit
 import ChromaColorPicker
 
+protocol sendScreenshotProtocol: class {
+    func sendScreenshotProtocol(index: Int, screenshot: UIImage)
+}
+
 class SketchViewController: UIViewController, NibLoadable {
     
     // MARK: - Properties
@@ -28,12 +32,15 @@ class SketchViewController: UIViewController, NibLoadable {
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var newSheetButton: UIButton!
+    @IBOutlet weak var closeButton: UIButton!
     
     
     let imagePicker : UIImagePickerController = UIImagePickerController()
     var gestureImage: UIImage = UIImage()
     var settingButtons: [CircleButton] = [CircleButton]()
     var menuButtons: [UIButton] = [UIButton]()
+    
+    var delegate: sendScreenshotProtocol?
     
     // 수정 후 몇 번째 컷인지 알기 위한 변수
     var index: Int = -1
@@ -51,13 +58,33 @@ class SketchViewController: UIViewController, NibLoadable {
         super.viewDidLoad()
         // 데이터 불러오기
         if let data = userdefault.value(forKey: "strokes") as? Data {
-            if let strokes = try? PropertyListDecoder().decode([Stroke].self, from: data) {
-                sketchView.strokes = strokes
+            print(22222)
+            if let strokeData = try? PropertyListDecoder().decode(StrokeData.self, from: data) {
+                print(33333)
+                sketchView.strokes = strokeData.strokes
+                
+//                let photoes = sketchView.openPhoto(photoes: strokeData.photoes)
+//                for photo in photoes {
+//                    sketchView.addSubview(photo)
+//                }
+                
+                if let photoes = strokeData.photoes {
+                    for photo in photoes {
+                        print(photo)
+                        let nib = GestureableView.loadFromNib()
+                        nib.dataSource = self
+                        
+                        gestureImage = photo.image
+                        nib.frame = photo.frame
+                        
+                        sketchView.addSubview(nib)
+                    }
+                }
             }
         }
         
         settingButtons = [paintButton, eraserButton, brushButton, textButton, photoButton]
-        menuButtons = [saveButton, newSheetButton]
+        menuButtons = [saveButton, newSheetButton, closeButton]
         for buttons in [settingButtons, menuButtons] {
             for button in buttons {
                 button.alpha = 0
@@ -77,7 +104,14 @@ class SketchViewController: UIViewController, NibLoadable {
     // MARK: Menu Button
     // 저장하기
     @IBAction func saveButton(_ sender: Any) {
-        userdefault.set(try? PropertyListEncoder().encode(sketchView.strokes), forKey: "strokes")
+//        userdefault.set(try? PropertyListEncoder().encode(sketchView.strokes), forKey: "strokes")
+        
+        let photoes = sketchView.savePhoto()
+        let strokeData = StrokeData(title: "strokes", strokes: sketchView.strokes,
+                                    photoes: photoes, screenshottoData: UIImage(view: sketchView))
+        userdefault.set(try? PropertyListEncoder().encode(strokeData), forKey: "\(strokeData.title)")
+        
+        delegate?.sendScreenshotProtocol(index: index, screenshot: UIImage(view: sketchView))
     }
     
     // 새로 그리기
@@ -167,18 +201,11 @@ extension SketchViewController: BrushSettingDataSource {
 // GestureableView의 이미지 크기를 위한 DataSource
 extension SketchViewController: GestureableViewDataSource {
     func gestureableImageView(_ gestureableView: GestureableView) -> UIImage {
+        
+        let imageHeight = gestureImage.size.height*150/gestureImage.size.width
+        gestureableView.frame.size = CGSize(width: 190, height: imageHeight+40)
+        
         return gestureImage
-    }
-    
-    @objc func viewPanGesture(gesture: UIPanGestureRecognizer) {
-        let translation = gesture.translation(in: gesture.view)
-        print(translation)
-        
-        if let view = gesture.view {
-            view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
-        }
-        
-        gesture.setTranslation(CGPoint.zero, in: sketchView)
     }
 }
 
@@ -190,7 +217,6 @@ extension SketchViewController: UIImagePickerControllerDelegate, UINavigationCon
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             self.imagePicker.sourceType = .photoLibrary
             self.imagePicker.delegate = self
-            //            self.imagePicker.allowsEditing = true
             self.present(self.imagePicker, animated: true, completion: { print("이미지 피커 나옴") })
         }
     }
@@ -199,7 +225,6 @@ extension SketchViewController: UIImagePickerControllerDelegate, UINavigationCon
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             self.imagePicker.sourceType = .camera
             self.imagePicker.delegate = self
-            //            self.imagePicker.allowsEditing = true
             self.present(self.imagePicker, animated: true, completion: { print("이미지 피커 나옴") })
         }
     }

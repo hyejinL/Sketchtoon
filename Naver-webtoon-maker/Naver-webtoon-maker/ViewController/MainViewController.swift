@@ -33,18 +33,20 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = UICollectionViewCell()
         
         if indexPath.row != 5 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: WebtoonCollectionViewCell.reuseIdentifier, for: indexPath) as! WebtoonCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WebtoonCollectionViewCell.reuseIdentifier, for: indexPath) as! WebtoonCollectionViewCell
+            
+            
+            return cell
         } else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddWebtoonCollectionViewCell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddWebtoonCollectionViewCell", for: indexPath)
+            
+            cell.layer.borderWidth = 0.3
+            cell.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            
+            return cell
         }
-        
-        cell.layer.borderWidth = 0.3
-        cell.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

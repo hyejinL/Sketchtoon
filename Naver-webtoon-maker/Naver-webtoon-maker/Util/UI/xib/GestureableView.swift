@@ -30,8 +30,8 @@ class GestureableView: UIView {
         if let image = dataSource?.gestureableImageView(self) {
             gestureImageView.image = image
             
-            let imageHeight = image.size.height*150/image.size.width
-            self.frame.size = CGSize(width: 190, height: imageHeight+40)
+            //            let imageHeight = image.size.height*150/image.size.width
+            //            self.frame.size = CGSize(width: 190, height: imageHeight+40)
         }
     }
     

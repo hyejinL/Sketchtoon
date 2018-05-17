@@ -65,6 +65,13 @@ extension WebtoonSettingViewController: UICollectionViewDelegate, UICollectionVi
     
 }
 
+extension WebtoonSettingViewController: sendScreenshotProtocol {
+    func sendScreenshotProtocol(index: Int, screenshot: UIImage) {
+//        let cell = cutCollectionView.cellForItem(at: IndexPath(row: 0, section: index)) as! CutCollectionViewCell
+//        cell.cutScreenshotImageView.image = screenshot
+    }
+}
+
 extension WebtoonSettingViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
