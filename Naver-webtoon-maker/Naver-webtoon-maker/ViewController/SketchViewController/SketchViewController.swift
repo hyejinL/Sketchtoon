@@ -35,6 +35,8 @@ class SketchViewController: UIViewController, NibLoadable {
     var settingButtons: [CircleButton] = [CircleButton]()
     var menuButtons: [UIButton] = [UIButton]()
     
+    // 수정 후 몇 번째 컷인지 알기 위한 변수
+    var index: Int = -1
     
     let userdefault = UserDefaults.standard
     
@@ -94,6 +96,10 @@ class SketchViewController: UIViewController, NibLoadable {
         
         addAlert(title: "새 종이로 바꾸시겠습니까?", message: nil,
                  style: .alert, actions: [okayAction, cancelAction])
+    }
+    
+    @IBAction func pressedDismissButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Setting Button
