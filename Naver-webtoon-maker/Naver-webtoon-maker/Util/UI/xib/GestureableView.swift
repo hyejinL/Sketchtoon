@@ -25,17 +25,19 @@ class GestureableView: UIView {
     
     var dataSource: GestureableViewDataSource?
     
+    // 레이아웃이 바뀔때마다 매번 호출
     override func layoutSubviews() {
-        
-        configure()
-        
         if let image = dataSource?.gestureableImageView(self) {
             gestureImageView.image = image
             
-            let imageHeight = image.size.height*150/image.size.width
-            self.frame.size = CGSize(width: 190, height: imageHeight+40)
+            //            let imageHeight = image.size.height*150/image.size.width
+            //            self.frame.size = CGSize(width: 190, height: imageHeight+40)
         }
-        
+    }
+    
+    // 한 번 호출
+    override func awakeFromNib() {
+        configure()
     }
     
     @IBAction func pressedRemoveImageButton(_ sender: UIButton) {

@@ -59,4 +59,46 @@ class SketchView: UIView {
         }
     }
     
+    func savePhoto() -> [Photo] {
+        var photoes: [Photo] = [Photo]()
+        
+        for subview in self.subviews {
+            if let view = subview as? GestureableView,
+                let image = view.gestureImageView.image {
+                let photo = Photo(frame: view.frame, transform: view.transform, imagetoData: image)
+                
+                photoes.append(photo)
+                print(photo)
+            }
+        }
+        
+        return photoes
+    }
+    
+    func openPhoto(photoes: [Photo]?) -> [GestureableView] {
+        var gestureView: [GestureableView] = [GestureableView]()
+        
+        if let photoes_ = photoes {
+        for photo in photoes_ {
+//            if let photoView = photo {
+//                let photoImage = photo.image {
+            print(photo)
+            let view: GestureableView = {
+                let view = GestureableView()
+                
+                view.gestureImageView.frame = photo.frame
+                view.transform = photo.transform
+                view.gestureImageView.image = photo.image
+                
+                return view
+            }()
+            
+            gestureView.append(view)
+//            }
+        }
+        }
+        
+        return gestureView
+    }
+    
 }

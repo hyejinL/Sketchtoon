@@ -1,12 +1,15 @@
 PODS:
+  - Cache (4.1.2)
   - ChromaColorPicker (1.5.1)
 
 DEPENDENCIES:
+  - Cache
   - ChromaColorPicker
 
 SPEC CHECKSUMS:
+  Cache: bd0233fc688b5e83a27bcd87807db7e6f23adcc5
   ChromaColorPicker: cc7fc1d92569a8a9198fe89d9a420147e508462c
 
-PODFILE CHECKSUM: 8dda0302ee8999c1b3207e52c7f5e9c7f360e0f6
+PODFILE CHECKSUM: 05e584a5e93896f6d4c70b78d51ac94dde9ec6a1
 
 COCOAPODS: 1.2.1

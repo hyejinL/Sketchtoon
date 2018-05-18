@@ -27,7 +27,7 @@ class SettingButtonView: UIView, RoundedProtocol {
             UIView.animate(withDuration: 0.4, animations: { [weak self] in
                 guard let `self` = self else { return }
                 
-                self.transform = CGAffineTransform(scaleX: 6.0, y: 6.0)
+                self.transform = CGAffineTransform(scaleX: 7.0, y: 7.0)
                 
             }) { [weak self] (_) in
                 guard let `self` = self else { return }

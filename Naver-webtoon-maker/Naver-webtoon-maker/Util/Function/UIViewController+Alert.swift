@@ -20,4 +20,13 @@ extension UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func defaultAlert(title: String?, message: String?) {
+        let alert = UIAlertController(title: title,
+                                      message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(okayAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }

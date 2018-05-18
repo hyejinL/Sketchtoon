@@ -6,6 +6,7 @@ target 'Naver-webtoon-maker' do
   use_frameworks!
 
     pod 'ChromaColorPicker'
+    pod 'Cache'
 
   # Pods for Naver-webtoon-maker
 

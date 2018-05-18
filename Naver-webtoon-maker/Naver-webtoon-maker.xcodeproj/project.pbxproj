@@ -30,6 +30,13 @@
 		0AFBA47C20AD75300019FAD8 /* NibLodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA47B20AD75300019FAD8 /* NibLodable.swift */; };
 		0AFBA47E20AD754F0019FAD8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA47D20AD754F0019FAD8 /* SettingViewController.swift */; };
 		0AFBA48020AD90580019FAD8 /* GestureableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AFBA47F20AD90580019FAD8 /* GestureableView.xib */; };
+		0AFBA4A220ADC9520019FAD8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA4A120ADC9520019FAD8 /* MainViewController.swift */; };
+		0AFBA4A420ADCA1F0019FAD8 /* WebtoonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA4A320ADCA1F0019FAD8 /* WebtoonCollectionViewCell.swift */; };
+		0AFBA4A620ADD1F00019FAD8 /* WebtoonSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA4A520ADD1F00019FAD8 /* WebtoonSettingViewController.swift */; };
+		0AFBA4A920ADD3110019FAD8 /* CutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA4A820ADD3110019FAD8 /* CutCollectionViewCell.swift */; };
+		0AFBA4B320AE03C10019FAD8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA4B220AE03C10019FAD8 /* Photo.swift */; };
+		0AFBA4B520AE0C910019FAD8 /* UIView+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA4B420AE0C910019FAD8 /* UIView+Screenshot.swift */; };
+		0AFBA4B720AE186A0019FAD8 /* UIImage+Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFBA4B620AE186A0019FAD8 /* UIImage+Screenshot.swift */; };
 		0DB34EA70C552389BD48FE53 /* Pods_Naver_webtoon_maker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B5288A51A0BA3261581F99 /* Pods_Naver_webtoon_maker.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +67,13 @@
 		0AFBA47B20AD75300019FAD8 /* NibLodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLodable.swift; sourceTree = "<group>"; };
 		0AFBA47D20AD754F0019FAD8 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0AFBA47F20AD90580019FAD8 /* GestureableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GestureableView.xib; sourceTree = "<group>"; };
+		0AFBA4A120ADC9520019FAD8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0AFBA4A320ADCA1F0019FAD8 /* WebtoonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonCollectionViewCell.swift; sourceTree = "<group>"; };
+		0AFBA4A520ADD1F00019FAD8 /* WebtoonSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebtoonSettingViewController.swift; sourceTree = "<group>"; };
+		0AFBA4A820ADD3110019FAD8 /* CutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutCollectionViewCell.swift; sourceTree = "<group>"; };
+		0AFBA4B220AE03C10019FAD8 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		0AFBA4B420AE0C910019FAD8 /* UIView+Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Screenshot.swift"; sourceTree = "<group>"; };
+		0AFBA4B620AE186A0019FAD8 /* UIImage+Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Screenshot.swift"; sourceTree = "<group>"; };
 		A5B5288A51A0BA3261581F99 /* Pods_Naver_webtoon_maker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Naver_webtoon_maker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEC0BEA50CD58474210B2AB /* Pods-Naver-webtoon-maker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Naver-webtoon-maker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Naver-webtoon-maker/Pods-Naver-webtoon-maker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,8 +160,11 @@
 		0AFBA45320AD66B70019FAD8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0AFBA46320AD709A0019FAD8 /* SketchViewController.swift */,
-				0AFBA47D20AD754F0019FAD8 /* SettingViewController.swift */,
+				0AFBA4A120ADC9520019FAD8 /* MainViewController.swift */,
+				0AFBA4A320ADCA1F0019FAD8 /* WebtoonCollectionViewCell.swift */,
+				0AFBA4A520ADD1F00019FAD8 /* WebtoonSettingViewController.swift */,
+				0AFBA4A820ADD3110019FAD8 /* CutCollectionViewCell.swift */,
+				0AFBA4A720ADD1F90019FAD8 /* SketchViewController */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -157,6 +174,8 @@
 			children = (
 				0AFBA46720AD72E90019FAD8 /* UIViewController+Optional.swift */,
 				0AFBA46920AD72F60019FAD8 /* UIViewController+Alert.swift */,
+				0AFBA4B620AE186A0019FAD8 /* UIImage+Screenshot.swift */,
+				0AFBA4B420AE0C910019FAD8 /* UIView+Screenshot.swift */,
 				0AFBA46520AD72D60019FAD8 /* NSObject+View.swift */,
 				0AFBA46120AD6E9D0019FAD8 /* UIColor+HexString.swift */,
 			);
@@ -171,7 +190,6 @@
 				0AFBA47120AD73B70019FAD8 /* CircleButton.swift */,
 				0AFBA47320AD73BE0019FAD8 /* CircleView.swift */,
 				0AFBA45920AD6D6D0019FAD8 /* SketchView.swift */,
-				0AFBA47520AD73EF0019FAD8 /* GestureableView.swift */,
 				0AFBA47720AD73F80019FAD8 /* BrushSettingView.swift */,
 				0AFBA47920AD74160019FAD8 /* EraserSettingView.swift */,
 				0AFBA45820AD67920019FAD8 /* xib */,
@@ -191,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				0AFBA45B20AD6DC10019FAD8 /* StrokeData.swift */,
+				0AFBA4B220AE03C10019FAD8 /* Photo.swift */,
 				0AFBA45D20AD6DCA0019FAD8 /* Stroke.swift */,
 				0AFBA45F20AD6DD00019FAD8 /* Brush.swift */,
 			);
@@ -200,9 +219,19 @@
 		0AFBA45820AD67920019FAD8 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				0AFBA47520AD73EF0019FAD8 /* GestureableView.swift */,
 				0AFBA47F20AD90580019FAD8 /* GestureableView.xib */,
 			);
 			path = xib;
+			sourceTree = "<group>";
+		};
+		0AFBA4A720ADD1F90019FAD8 /* SketchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0AFBA46320AD709A0019FAD8 /* SketchViewController.swift */,
+				0AFBA47D20AD754F0019FAD8 /* SettingViewController.swift */,
+			);
+			path = SketchViewController;
 			sourceTree = "<group>";
 		};
 		2CBAA9CB501587574840DAA1 /* Pods */ = {
@@ -346,10 +375,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AFBA4B320AE03C10019FAD8 /* Photo.swift in Sources */,
 				0AFBA46220AD6E9D0019FAD8 /* UIColor+HexString.swift in Sources */,
 				0AFBA47C20AD75300019FAD8 /* NibLodable.swift in Sources */,
 				0AFBA45C20AD6DC10019FAD8 /* StrokeData.swift in Sources */,
+				0AFBA4B520AE0C910019FAD8 /* UIView+Screenshot.swift in Sources */,
 				0AFBA45A20AD6D6D0019FAD8 /* SketchView.swift in Sources */,
+				0AFBA4A420ADCA1F0019FAD8 /* WebtoonCollectionViewCell.swift in Sources */,
+				0AFBA4A620ADD1F00019FAD8 /* WebtoonSettingViewController.swift in Sources */,
 				0AFBA47A20AD74160019FAD8 /* EraserSettingView.swift in Sources */,
 				0AFBA46020AD6DD00019FAD8 /* Brush.swift in Sources */,
 				0AFBA46620AD72D60019FAD8 /* NSObject+View.swift in Sources */,
@@ -359,12 +392,15 @@
 				0AFBA46820AD72E90019FAD8 /* UIViewController+Optional.swift in Sources */,
 				0AFBA43E20AD66880019FAD8 /* AppDelegate.swift in Sources */,
 				0AFBA47620AD73EF0019FAD8 /* GestureableView.swift in Sources */,
+				0AFBA4A220ADC9520019FAD8 /* MainViewController.swift in Sources */,
 				0AFBA46420AD709A0019FAD8 /* SketchViewController.swift in Sources */,
 				0AFBA45E20AD6DCA0019FAD8 /* Stroke.swift in Sources */,
 				0AFBA47420AD73BE0019FAD8 /* CircleView.swift in Sources */,
 				0AFBA47E20AD754F0019FAD8 /* SettingViewController.swift in Sources */,
 				0AFBA47820AD73F80019FAD8 /* BrushSettingView.swift in Sources */,
+				0AFBA4B720AE186A0019FAD8 /* UIImage+Screenshot.swift in Sources */,
 				0AFBA47020AD73AF0019FAD8 /* SettingButtonView.swift in Sources */,
+				0AFBA4A920ADD3110019FAD8 /* CutCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
