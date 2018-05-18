@@ -23,7 +23,9 @@ class BrushSettingView: UIView {
     
     override func layoutSubviews() {
         brushView.backgroundColor = brush.color
-        //        brushViewWidth.constant = brush.width
+//        brushViewWidth.constant = brush.width
+//        brushView.frame.size.width = brush.width
+        brushScaleSlider.value = Float(brush.width)
     }
     
     @IBAction func changedBrushScale(_ sender: UISlider) {

@@ -34,6 +34,7 @@ class SettingViewController: UIViewController {
     @IBOutlet var eraserSettingView: EraserSettingView!
     
     var brush = Brush(colortoString: UIColor(), width: CGFloat())
+    var backgroundColor: UIColor?
     
     var settingKind: Int = -1
     
@@ -64,6 +65,9 @@ class SettingViewController: UIViewController {
             
         case SettingKind.eraser.rawValue:
             view = eraserSettingView
+            if let bgColor = backgroundColor {
+                eraserSettingView.brush = Brush(colortoString: bgColor, width: 10)
+            }
             
         case SettingKind.brush.rawValue:
             view = brushSettingView
@@ -81,7 +85,8 @@ class SettingViewController: UIViewController {
     @objc func dismissAction() {
         switch settingKind {
         case SettingKind.eraser.rawValue:
-            break
+            brush = brushSettingView.brushSetting()
+            dataSource?.brushSetting(settingKind, brush: brush, backgroundColor: nil)
         case SettingKind.brush.rawValue:
             brush = brushSettingView.brushSetting()
             dataSource?.brushSetting(settingKind, brush: brush, backgroundColor: nil)

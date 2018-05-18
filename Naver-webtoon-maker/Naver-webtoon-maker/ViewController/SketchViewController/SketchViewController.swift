@@ -58,15 +58,8 @@ class SketchViewController: UIViewController, NibLoadable {
         super.viewDidLoad()
         // 데이터 불러오기
         if let data = userdefault.value(forKey: "strokes") as? Data {
-            print(22222)
             if let strokeData = try? PropertyListDecoder().decode(StrokeData.self, from: data) {
-                print(33333)
                 sketchView.strokes = strokeData.strokes
-                
-//                let photoes = sketchView.openPhoto(photoes: strokeData.photoes)
-//                for photo in photoes {
-//                    sketchView.addSubview(photo)
-//                }
                 
                 if let photoes = strokeData.photoes {
                     for photo in photoes {
@@ -112,6 +105,8 @@ class SketchViewController: UIViewController, NibLoadable {
         userdefault.set(try? PropertyListEncoder().encode(strokeData), forKey: "\(strokeData.title)")
         
         delegate?.sendScreenshotProtocol(index: index, screenshot: UIImage(view: sketchView))
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     // 새로 그리기
@@ -144,6 +139,7 @@ class SketchViewController: UIViewController, NibLoadable {
         settingViewController.dataSource = self
         settingViewController.brush = Brush(colortoString: sketchView.lineColor, width: sketchView.lineWidth)
         settingViewController.settingKind = sender.tag
+        settingViewController.backgroundColor = self.view.backgroundColor
         
         self.present(settingViewController, animated: true, completion: nil)
     }
@@ -183,7 +179,11 @@ extension SketchViewController: BrushSettingDataSource {
             sketchView.backgroundColor = color
             
         case SettingKind.eraser.rawValue:
-            print(2222)
+            // TODO: 지우개 설정시, Stroke에 지우개인 것은 알 필요가 있음 : 배경 색을 채우기 했을 때 함께 채우기 되기 위함
+            if let brush_ = brush {
+                sketchView.lineColor = brush_.color
+                sketchView.lineWidth = brush_.width
+            }
             
         case SettingKind.brush.rawValue:
             if let brush_ = brush {
