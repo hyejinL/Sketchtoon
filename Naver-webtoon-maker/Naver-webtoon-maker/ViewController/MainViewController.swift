@@ -12,10 +12,27 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var webtoonCollectionView: UICollectionView!
     
+    var webtoonData: [Webtoon] = [Webtoon]()
+    
+    let userdefault = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         collectionViewInit()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let data = userdefault.value(forKey: "webtoon") as? Data {
+            if let webtoons = try? PropertyListDecoder().decode([Webtoon].self, from: data) {
+                print(webtoons.count)
+                webtoonData = webtoons
+                
+            webtoonCollectionView.reloadData()
+            }
+        }
     }
 }
 
@@ -24,18 +41,17 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         webtoonCollectionView.delegate = self; webtoonCollectionView.dataSource = self
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return webtoonData.count+1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.row != 5 {
+        if indexPath.row != webtoonData.count {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WebtoonCollectionViewCell.reuseIdentifier, for: indexPath) as! WebtoonCollectionViewCell
+            
+            cell.webtoonImageView.image = webtoonData[indexPath.row].strokes[0].screenshot
+            cell.titleLabel.text = webtoonData[indexPath.row].title
             
             
             return cell
@@ -50,9 +66,18 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 5 {
-            let addWebtoonViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: WebtoonSettingViewController.reuseIdentifier) as! WebtoonSettingViewController
-            self.navigationController?.pushViewController(addWebtoonViewController, animated: true)
+        if indexPath.row == webtoonData.count {
+            let navi = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navi") as! UINavigationController
+            if let WebtoonSettingViewController = navi.viewControllers.first as? WebtoonSettingViewController {
+                WebtoonSettingViewController.webtoonData = webtoonData
+            }
+            self.present(navi, animated: true, completion: nil)
+        } else {
+            let webtoonDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: WebtoonDetailViewController.reuseIdentifier) as! WebtoonDetailViewController
+    
+            webtoonDetailViewController.webtoon = webtoonData[indexPath.row]
+            
+            self.navigationController?.pushViewController(webtoonDetailViewController, animated: true)
         }
     }
 }

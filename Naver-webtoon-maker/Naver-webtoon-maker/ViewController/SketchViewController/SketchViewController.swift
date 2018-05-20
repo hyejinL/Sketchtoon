@@ -57,18 +57,21 @@ class SketchViewController: UIViewController, NibLoadable {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 데이터 불러오기
-        if let data = userdefault.value(forKey: "strokes") as? Data {
+        if let data = userdefault.value(forKey: "new_\(index)") as? Data {
             if let strokeData = try? PropertyListDecoder().decode(StrokeData.self, from: data) {
                 sketchView.strokes = strokeData.strokes
                 
                 if let photoes = strokeData.photoes {
                     for photo in photoes {
                         print(photo)
-                        let nib = GestureableView.loadFromNib()
-                        nib.dataSource = self
+//                        let nib = GestureableView.loadFromNib()
+//                        nib.dataSource = self
+                        let nib = makeGestureableView(image: photo.image)
                         
                         gestureImage = photo.image
-                        nib.frame = photo.frame
+                        nib.transform = photo.transform
+//                        nib.frame.origin = photo.frame.origin
+                        print(nib.frame, nib.transform)
                         
                         sketchView.addSubview(nib)
                     }
@@ -100,7 +103,7 @@ class SketchViewController: UIViewController, NibLoadable {
 //        userdefault.set(try? PropertyListEncoder().encode(sketchView.strokes), forKey: "strokes")
         
         let photoes = sketchView.savePhoto()
-        let strokeData = StrokeData(title: "strokes", strokes: sketchView.strokes,
+        let strokeData = StrokeData(title: "new_\(index)", strokes: sketchView.strokes,
                                     photoes: photoes, screenshottoData: UIImage(view: sketchView))
         userdefault.set(try? PropertyListEncoder().encode(strokeData), forKey: "\(strokeData.title)")
         
@@ -139,7 +142,7 @@ class SketchViewController: UIViewController, NibLoadable {
         settingViewController.dataSource = self
         settingViewController.brush = Brush(colortoString: sketchView.lineColor, width: sketchView.lineWidth)
         settingViewController.settingKind = sender.tag
-        settingViewController.backgroundColor = self.view.backgroundColor
+//        settingViewController.backgroundColor = self.view.backgroundColor
         
         self.present(settingViewController, animated: true, completion: nil)
     }
@@ -167,6 +170,18 @@ class SketchViewController: UIViewController, NibLoadable {
                  style: .actionSheet, actions: actions)
     }
    
+    func makeGestureableView(image: UIImage) -> UIView {
+        let nib = GestureableView.loadFromNib()
+        nib.gestureImageView.image = image
+        
+        let imageHeight = image.size.height*150/image.size.width
+        let imageSize = CGSize(width: 190, height: imageHeight+40)
+        let nibSize = CGSize(width: imageSize.width + 40, height: imageSize.height + 40)
+        nib.gestureImageView.frame.size = imageSize
+        nib.frame.size = nibSize
+        
+        return nib
+    }
     
 }
 
@@ -238,19 +253,26 @@ extension SketchViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        defer {
-            let nib = GestureableView.loadFromNib()
-            nib.dataSource = self
-            nib.center = self.sketchView.center
+//        defer {
+//            let nib = GestureableView.loadFromNib()
+//            nib.dataSource = self
+//            nib.center = self.sketchView.center
+//            self.sketchView.addSubview(nib)
+//
+//            self.dismiss(animated: true) {
+//                print("이미지 피커 사라짐")
+//            }
+//        }
+        
+        if let originalImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+//            gestureImage = originalImage
+            let nib = makeGestureableView(image: originalImage)
             self.sketchView.addSubview(nib)
             
             self.dismiss(animated: true) {
                 print("이미지 피커 사라짐")
             }
         }
-        
-        if let originalImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            gestureImage = originalImage
-        }
     }
+    
 }

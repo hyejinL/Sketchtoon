@@ -66,6 +66,7 @@ class SettingViewController: UIViewController {
         case SettingKind.eraser.rawValue:
             view = eraserSettingView
             if let bgColor = backgroundColor {
+                print(bgColor)
                 eraserSettingView.brush = Brush(colortoString: bgColor, width: 10)
             }
             

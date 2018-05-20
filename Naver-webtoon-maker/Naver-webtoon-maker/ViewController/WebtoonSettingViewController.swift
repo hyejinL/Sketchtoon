@@ -16,6 +16,12 @@ class WebtoonSettingViewController: UIViewController {
     
     var cutCount = 1
     var widthRatio: CGFloat = 0.0
+    var index = -1
+    var screenshot = UIImage()
+    
+    var webtoonData: [Webtoon] = [Webtoon]()
+    
+    let userdefault = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,10 @@ class WebtoonSettingViewController: UIViewController {
         
         pageCountLabel.text = "/ \(cutCount)"
         pageLabel.text = "1"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         widthRatio = cutCollectionView.bounds.size.width/375
     }
@@ -38,11 +48,62 @@ class WebtoonSettingViewController: UIViewController {
         cutCollectionView.scrollToItem(at: indexPath, at: .right, animated: true)
     }
     
+    @IBAction func pressedSaveWebtoonButton(_ sender: Any) {
+        let alert = UIAlertController(title: "제목을 입력해주세요", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "제목"
+        }
+        let okayAction = UIAlertAction(title: "확인", style: .default) { [weak self] (_) in
+            guard let `self` = self else { return }
+            
+            let textField = alert.textFields![0]
+            
+            let strokeData = self.importNewData()
+            
+            // save Webtoon
+            if textField.text != "" {
+                let webtoon: Webtoon = Webtoon(title: "\(self.gsno(textField.text))", strokes: strokeData)
+                self.webtoonData.append(webtoon)
+                
+                self.userdefault.set(try? PropertyListEncoder().encode(self.webtoonData), forKey: "webtoon")
+                
+                self.dismiss(animated: true, completion: nil)
+                
+            }
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(okayAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func pressedDismissButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func importNewData() -> [StrokeData] {
+        var strokeData: [StrokeData] = [StrokeData]()
+        
+        for index in 0..<self.cutCount {
+            if let data = self.userdefault.value(forKey: "new_\(index)") as? Data {
+                if let strokes = try? PropertyListDecoder().decode(StrokeData.self, from: data) {
+                    strokeData.append(strokes)
+                }
+            }
+        }
+        
+        return strokeData
+    }
 }
 
 extension WebtoonSettingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionViewInit() {
         cutCollectionView.delegate = self; cutCollectionView.dataSource = self
+        
+        
+//        cutCollectionView.register(UINib(nibName: CutCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: CutCollectionViewCell.reuseIdentifier)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -52,6 +113,10 @@ extension WebtoonSettingViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CutCollectionViewCell.reuseIdentifier, for: indexPath) as! CutCollectionViewCell
         
+        if indexPath.row == index {
+            cell.cutScreenshotImageView.image = screenshot
+        }
+        
         return cell
     }
     
@@ -59,6 +124,7 @@ extension WebtoonSettingViewController: UICollectionViewDelegate, UICollectionVi
         let sketchViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: SketchViewController.reuseIdentifier) as! SketchViewController
         
         sketchViewController.index = indexPath.row
+        sketchViewController.delegate = self
         
         self.present(sketchViewController, animated: true, completion: nil)
     }
@@ -67,8 +133,11 @@ extension WebtoonSettingViewController: UICollectionViewDelegate, UICollectionVi
 
 extension WebtoonSettingViewController: sendScreenshotProtocol {
     func sendScreenshotProtocol(index: Int, screenshot: UIImage) {
-//        let cell = cutCollectionView.cellForItem(at: IndexPath(row: 0, section: index)) as! CutCollectionViewCell
-//        cell.cutScreenshotImageView.image = screenshot
+        self.index = index
+        self.screenshot = screenshot
+        print(index, screenshot)
+        
+        cutCollectionView.reloadData()
     }
 }
 
