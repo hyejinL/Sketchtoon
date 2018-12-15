@@ -77,13 +77,14 @@ extension WebtoonDetailViewController: UICollectionViewDelegateFlowLayout {
         let indexPath = NSIndexPath(row: 0, section: 0)
         let endEdgeInset = 2*28*widthRatio
         
-        if indexPath.row == 0 {
-            return UIEdgeInsets(top: 0, left: endEdgeInset, bottom: 0, right: 0)
-        } else if indexPath.row == (gino(webtoon.strokes.count)-1) {
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: endEdgeInset)
-        } else {
-            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        }
+//        if indexPath.row == 0 {
+//            return UIEdgeInsets(top: 0, left: endEdgeInset, bottom: 0, right: 0)
+//        } else if indexPath.row == (gino(webtoon.strokes.count)-1) {
+//            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: endEdgeInset)
+//        } else {
+//            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        }
+        return UIEdgeInsets(top: 0, left: endEdgeInset, bottom: 0, right: endEdgeInset)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
